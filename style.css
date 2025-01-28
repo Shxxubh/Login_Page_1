@@ -1,0 +1,281 @@
+
+@import url("https://use.fontawesome.com/release/v6.5.1/css/all.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat");
+
+body {
+    background-image: url(./images/background3.jpg);
+    background-size: cover
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    /* font-weight: bold; */
+    font-synthesis-style: 'Playfair Display';
+    margin: 0;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
+}
+
+span {
+    font-size: 12px;
+}
+
+a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+}
+
+.main-container {
+    position: relative;
+    width: 768px;
+    max-width: 100%;
+    min-height: 500px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.6),
+        0 10px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    /* font-family: "Montserrat", sans-serif; */
+    /* margin: 5% 33% 0% 25%; */
+
+
+}
+
+.overlay-container {
+    display: none;
+}
+
+
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    padding: 1px;
+    transition: all 0.6s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+}
+
+.login-container {
+    left: 0;
+    width: 50%;
+    z-index: 1;
+}
+
+.signup-container {
+    right: 0;
+    width: 50%;
+    z-index: 1;
+}
+
+.form-container form {
+    height: 100%;
+    background: #fff;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.social-container {
+    margin: 20px 0;
+}
+
+.social-container a {
+    height: 30px;
+    width: 30px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+}
+
+.form-container input {
+    width: 100%;
+    background: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+}
+
+button {
+    background: #ff445c;
+    color: #fff;
+    border: 1px solid #ff4b2b;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+
+input:focus {
+    background-color: palevioletred;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+}
+
+button.ghost {
+    background: transparent;
+    border-color: #fff;
+}
+
+.signup-container {
+    left: 0;
+    opacity: 0;
+}
+
+.overlay-container {
+    display: block;
+    position: absolute;
+    z-index: 100;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+
+}
+
+.overlay {
+    position: relative;
+    height: 100%;
+    width: 200%;
+    left: -100%;
+    background: linear-gradient(to right, #ff4b2b, #ff416c) no-repeat 0 0 / cover;
+    color: #fff;
+    transform: translateY(0);
+    /* transition: transform 0.6s ease-in-out; */
+    transition: transform 0.6s ease-out;
+}
+
+.overlay-panel {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 0.06s ease-in-out;
+}
+
+.overlay-right {
+    right: 0;
+    transform: translateY(0);
+}
+
+.overlay-left {
+    transform: translateY(-20%);
+}
+
+
+.main-container.right-panel-active .signup-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+}
+
+.main-container.right-panel-active .login-container {
+    transform: translateX(100%);
+    z-index: 1;
+}
+
+.main-container.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+.main-container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.overlay-panel.overlay-left {
+    transform: translateX(-4%);
+}
+
+.overlay-panel.overlay-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.social-container a:hover {
+    align-content: center;
+    background-color: #ff416c;
+    transform: scale(1.30);
+}
+
+a img {
+    width: 25px;
+    height: 25px;
+
+}
+
+button:hover {
+    transform: scale(1.10);
+}
+
+#btnLogin {
+    margin-top: -10px;
+    background: #ff445c;
+    color: #fff;
+    border: 1px solid #ff4b2b;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+
+#btnSignin {
+    margin-top: -10px;
+    background: #ff445c;
+    color: #fff;
+    border: 1px solid #ff4b2b;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+
+input:hover {
+    transform: scale(1.10);
+}
